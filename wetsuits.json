@@ -1,0 +1,399 @@
+{
+    "Seac": {
+      "sizes": {
+        "Men": [
+          { "size": "S",        "height_cm": "165-175",  "weight_kg": "59-70" },
+          { "size": "M",        "height_cm": "170-178",  "weight_kg": "68-79" },
+          { "size": "M-Large",  "height_cm": "170-178",  "weight_kg": "79-86" },
+          { "size": "M-Long",   "height_cm": "175-183",  "weight_kg": "68-79" },
+          { "size": "L",        "height_cm": "175-183",  "weight_kg": "79-86" },
+          { "size": "L-Large",  "height_cm": "175-183",  "weight_kg": "86-95" },
+          { "size": "L-Long",   "height_cm": "180-188",  "weight_kg": "79-91" },
+          { "size": "XL",       "height_cm": "180-188",  "weight_kg": "86-102" },
+          { "size": "XXL",      "height_cm": "183-193",  "weight_kg": "95-109" },
+          { "size": "XXXL",     "height_cm": "183-198",  "weight_kg": "100-120" },
+          { "size": "XXXXL",    "height_cm": "188-203",  "weight_kg": "120+"    }
+        ],
+        "Women": [
+          { "size": "XS",      "height_cm": "157-162", "weight_kg": "55-60", "chest_cm": "81-84" },
+          { "size": "S",       "height_cm": "162-167", "weight_kg": "59-64", "chest_cm": "87-90" },
+          { "size": "S Large", "height_cm": "162-167", "weight_kg": "65-73", "chest_cm": "96-99" },
+          { "size": "M",       "height_cm": "167-172", "weight_kg": "68-75", "chest_cm": "91-97" },
+          { "size": "L",       "height_cm": "172-178", "weight_kg": "75-82", "chest_cm": "99-102" },
+          { "size": "XL",      "height_cm": "177-183", "weight_kg": "83-88", "chest_cm": "102-104" }
+        ]
+      },
+      "thickness_recommendations": [
+        { "thickness_mm": "1-2",  "recommended_temp_c": "26+"   },
+        { "thickness_mm": "3",    "recommended_temp_c": "24-27" },
+        { "thickness_mm": "5",    "recommended_temp_c": "17-21" },
+        { "thickness_mm": "7",    "recommended_temp_c": "10-16" },
+        { "thickness_mm": "8+",   "recommended_temp_c": "<10"   }
+      ]
+    },
+  
+    "Mako": {
+      "sizes": {
+        "Men": [
+          { "size": "Youth L (48)", "height_cm": "147-157", "weight_kg": "43-52" },
+          { "size": "S",            "height_cm": "155-168", "weight_kg": "54-64" },
+          { "size": "M",            "height_cm": "163-175", "weight_kg": "66-73" },
+          { "size": "ML",           "height_cm": "170-180", "weight_kg": "73-77" },
+          { "size": "L",            "height_cm": "175-188", "weight_kg": "79-86" },
+          { "size": "XL",           "height_cm": "178-191", "weight_kg": "86-93" },
+          { "size": "XXL",          "height_cm": "180-193", "weight_kg": "95-102" },
+          { "size": "XXXL",         "height_cm": "183-198", "weight_kg": "104-113+" }
+        ],
+        "Women": [
+          { "size": "S (US 4-6)",  "height_cm": "155-160", "weight_kg": "48-57", "chest_cm": "84-86", "waist_cm": "61-64", "hip_cm": "91-94" },
+          { "size": "M (US 8-10)", "height_cm": "160-165", "weight_kg": "52-61", "chest_cm": "89-91", "waist_cm": "66-69", "hip_cm": "97-99" },
+          { "size": "ML (US 10-12)","height_cm": "165-173","weight_kg": "57-64", "chest_cm": "91-94", "waist_cm": "69-71", "hip_cm": "99-102" },
+          { "size": "L (US 14)",   "height_cm": "173-180", "weight_kg": "61-70", "chest_cm": "99",    "waist_cm": "76",    "hip_cm": "104" }
+        ]
+      },
+      "thickness_recommendations": [
+        { "thickness_mm": "1-2",  "recommended_temp_c": "26+" },
+        { "thickness_mm": "3",    "recommended_temp_c": "24-27" },
+        { "thickness_mm": "5",    "recommended_temp_c": "17-21" },
+        { "thickness_mm": "7",    "recommended_temp_c": "10-16" },
+        { "thickness_mm": "8+",   "recommended_temp_c": "<10" }
+      ]
+    },
+  
+    "Salvimar": {
+      "sizes": {
+        "Men": [
+          { "size": "S (2)",  "height_cm": "162-170", "chest_cm": "85-90",  "waist_cm": "70-75",  "hips_cm": "78-83" },
+          { "size": "M (3)",  "height_cm": "167-175", "chest_cm": "89-94",  "waist_cm": "76-81",  "hips_cm": "82-89" },
+          { "size": "L (4)",  "height_cm": "173-185", "chest_cm": "93-100", "waist_cm": "82-88",  "hips_cm": "89-96" },
+          { "size": "XL (5)", "height_cm": "180-190", "chest_cm": "99-106", "waist_cm": "87-96",  "hips_cm": "94-103" },
+          { "size": "XXL (6)","height_cm": "190-198", "chest_cm": "105-115","waist_cm": "95-104", "hips_cm": "102-114"}
+        ],
+        "Women": [
+          { "size": "S",  "height_cm": "162-172", "chest_cm": "88-92" },
+          { "size": "M",  "height_cm": "166-176", "chest_cm": "92-96" },
+          { "size": "L",  "height_cm": "170-180", "chest_cm": "96-100"},
+          { "size": "XL", "height_cm": "180-184", "chest_cm": "100-104"}
+        ]
+      },
+      "thickness_recommendations": [
+        { "thickness_mm": "1-2",  "recommended_temp_c": "26+" },
+        { "thickness_mm": "3",    "recommended_temp_c": "24-27" },
+        { "thickness_mm": "5",    "recommended_temp_c": "17-21" },
+        { "thickness_mm": "7",    "recommended_temp_c": "10-16" },
+        { "thickness_mm": "8+",   "recommended_temp_c": "<10" }
+      ]
+    },
+  
+    "Waihana": {
+      "sizes": {
+        "Men": [
+          { "size": "XXS",   "height_cm": "124-155", "weight_kg": "43-52" },
+          { "size": "XS",    "height_cm": "150-165", "weight_kg": "50-59" },
+          { "size": "S",     "height_cm": "160-174", "weight_kg": "56-68" },
+          { "size": "M",     "height_cm": "168-183", "weight_kg": "64-77" },
+          { "size": "ML",    "height_cm": "168-183", "weight_kg": "75-84" },
+          { "size": "ML-T",  "height_cm": "178-190", "weight_kg": "75-84" },
+          { "size": "L",     "height_cm": "170-188", "weight_kg": "77-86" },
+          { "size": "XL",    "height_cm": "173-190", "weight_kg": "82-91" },
+          { "size": "XXL",   "height_cm": "175-195", "weight_kg": "86-100" },
+          { "size": "XXXL",  "height_cm": "180-196", "weight_kg": "91-109" }
+        ],
+        "Women": [
+          { "size": "XXS",   "height_cm": "124-155", "weight_kg": "43-52" },
+          { "size": "XS",    "height_cm": "150-165", "weight_kg": "50-59" },
+          { "size": "S",     "height_cm": "160-174", "weight_kg": "56-68" },
+          { "size": "M",     "height_cm": "165-178", "weight_kg": "61-73" },
+          { "size": "L",     "height_cm": "170-183", "weight_kg": "68-82" },
+          { "size": "XL",    "height_cm": "173-188", "weight_kg": "77-91" }
+        ]
+      },
+      "thickness_recommendations": [
+        { "thickness_mm": "1-2",  "recommended_temp_c": "26+" },
+        { "thickness_mm": "3",    "recommended_temp_c": "24-27" },
+        { "thickness_mm": "5",    "recommended_temp_c": "17-21" },
+        { "thickness_mm": "7",    "recommended_temp_c": "10-16" },
+        { "thickness_mm": "8+",   "recommended_temp_c": "<10" }
+      ]
+    },
+  
+    "Omer": {
+      "sizes": {
+        "Men": [
+          { "size": "2 (S)",   "height_cm": "167-172", "weight_kg": "63-70",  "chest_cm": "91-97",  "waist_cm": "72-80",  "hips_cm": "81-88" },
+          { "size": "3 (M)",   "height_cm": "171-177", "weight_kg": "68-76",  "chest_cm": "95-101", "waist_cm": "77-84",  "hips_cm": "86-92" },
+          { "size": "4 (L)",   "height_cm": "176-182", "weight_kg": "74-84",  "chest_cm": "99-105", "waist_cm": "81-88",  "hips_cm": "90-97" },
+          { "size": "5 (XL)",  "height_cm": "181-187", "weight_kg": "82-92",  "chest_cm": "103-110","waist_cm": "85-93",  "hips_cm": "95-102" },
+          { "size": "6 (XXL)", "height_cm": "186-192", "weight_kg": "90-100", "chest_cm": "108-115","waist_cm": "90-98",  "hips_cm": "99-108" },
+          { "size": "7 (3XL)", "height_cm": "191-197", "weight_kg": "98-114", "chest_cm": "113-122","waist_cm": "95-105", "hips_cm": "105-115"}
+        ]
+      },
+      "thickness_recommendations": [
+        { "thickness_mm": "1-2",  "recommended_temp_c": "26+" },
+        { "thickness_mm": "3",    "recommended_temp_c": "24-27" },
+        { "thickness_mm": "5",    "recommended_temp_c": "17-21" },
+        { "thickness_mm": "7",    "recommended_temp_c": "10-16" },
+        { "thickness_mm": "8+",   "recommended_temp_c": "<10" }
+      ]
+    },
+  
+    "Molchanovs": {
+      "sizes": {
+        "Men": [
+          { "size": "S",  "height_cm": "170-173", "chest_cm": "86-92",  "waist_cm": "71-76",  "hips_cm": "86-92" },
+          { "size": "M",  "height_cm": "173-183", "chest_cm": "92-102", "waist_cm": "76-86",  "hips_cm": "92-102"},
+          { "size": "L",  "height_cm": "178-188", "chest_cm": "102-112","waist_cm": "86-96",  "hips_cm": "102-112"},
+          { "size": "XL", "height_cm": "188-192", "chest_cm": "112-116","waist_cm": "96-102", "hips_cm": "112-118"}
+        ],
+        "Women": [
+          { "size": "XS", "height_cm": "153-162", "chest_cm": "75-85",  "waist_cm": "57-67",  "hips_cm": "82-92" },
+          { "size": "S",  "height_cm": "155-165", "chest_cm": "79-89",  "waist_cm": "61-71",  "hips_cm": "86-96" },
+          { "size": "M",  "height_cm": "162-173", "chest_cm": "84-94",  "waist_cm": "66-76",  "hips_cm": "94-104"},
+          { "size": "L",  "height_cm": "173-183", "chest_cm": "92-102", "waist_cm": "71-81",  "hips_cm": "99-109"}
+        ]
+      },
+      "thickness_recommendations": [
+        { "thickness_mm": "1-2",  "recommended_temp_c": "26+" },
+        { "thickness_mm": "3",    "recommended_temp_c": "24-27" },
+        { "thickness_mm": "5",    "recommended_temp_c": "17-21" },
+        { "thickness_mm": "7",    "recommended_temp_c": "10-16" },
+        { "thickness_mm": "8+",   "recommended_temp_c": "<10" }
+      ]
+    },
+  
+    "C4": {
+      "sizes": {
+        "Unisex": [
+          { "size": "T1", "height_cm": "160-167", "weight_kg": "55-65",  "chest_cm": "86",  "waist_cm": "72",  "hips_cm": "81" },
+          { "size": "T2", "height_cm": "167-175", "weight_kg": "65-75",  "chest_cm": "92",  "waist_cm": "78",  "hips_cm": "87" },
+          { "size": "T3", "height_cm": "175-182", "weight_kg": "75-83",  "chest_cm": "98",  "waist_cm": "85",  "hips_cm": "97" },
+          { "size": "T4", "height_cm": "182-190", "weight_kg": "83-90",  "chest_cm": "105", "waist_cm": "91",  "hips_cm": "100"},
+          { "size": "T5", "height_cm": "190-200", "weight_kg": "90-110", "chest_cm": "112", "waist_cm": "100", "hips_cm": "107"}
+        ]
+      },
+      "thickness_recommendations": [
+        { "thickness_mm": "1-2",  "recommended_temp_c": "26+" },
+        { "thickness_mm": "3",    "recommended_temp_c": "24-27" },
+        { "thickness_mm": "5",    "recommended_temp_c": "17-21" },
+        { "thickness_mm": "7",    "recommended_temp_c": "10-16" },
+        { "thickness_mm": "8+",   "recommended_temp_c": "<10" }
+      ]
+    },
+  
+    "SpearPro": {
+      "sizes": {
+        "Men": [
+          { "size": "S",  "height_cm": "163-173", "weight_kg": "59-68" },
+          { "size": "M",  "height_cm": "170-180", "weight_kg": "68-77" },
+          { "size": "L",  "height_cm": "178-188", "weight_kg": "77-86" },
+          { "size": "XL", "height_cm": "183-193", "weight_kg": "86-100"},
+          { "size": "XXL","height_cm": "188-198", "weight_kg": "100-113"}
+        ]
+      },
+      "thickness_recommendations": [
+        { "thickness_mm": "1-2",  "recommended_temp_c": "26+" },
+        { "thickness_mm": "3",    "recommended_temp_c": "24-27" },
+        { "thickness_mm": "5",    "recommended_temp_c": "17-21" },
+        { "thickness_mm": "7",    "recommended_temp_c": "10-16" },
+        { "thickness_mm": "8+",   "recommended_temp_c": "<10" }
+      ]
+    },
+  
+    "American Dive Co": {
+      "sizes": {
+        "Men": [
+          { "size": "S",   "height_cm": "165-173" },
+          { "size": "M",   "height_cm": "173-180" },
+          { "size": "L",   "height_cm": "178-185" },
+          { "size": "XL",  "height_cm": "183-191" },
+          { "size": "XXL", "height_cm": "188-196" }
+        ],
+        "note": "Standard S-XXL sizing; contact manufacturer for detailed chart"
+      },
+      "thickness_recommendations": [
+        { "thickness_mm": "1-2",  "recommended_temp_c": "26+" },
+        { "thickness_mm": "3",    "recommended_temp_c": "24-27" },
+        { "thickness_mm": "5",    "recommended_temp_c": "17-21" },
+        { "thickness_mm": "7",    "recommended_temp_c": "10-16" },
+        { "thickness_mm": "8+",   "recommended_temp_c": "<10" }
+      ]
+    },
+  
+    "Polosub": {
+      "note": "Custom tailored wetsuits (no fixed size chart; suits are made-to-measure)",
+      "thickness_recommendations": [
+        { "thickness_mm": "1-2",  "recommended_temp_c": "26+" },
+        { "thickness_mm": "3",    "recommended_temp_c": "24-27" },
+        { "thickness_mm": "5",    "recommended_temp_c": "17-21" },
+        { "thickness_mm": "7",    "recommended_temp_c": "10-16" },
+        { "thickness_mm": "8+",   "recommended_temp_c": "<10" }
+      ]
+    },
+  
+    "Elios": {
+      "note": "Custom tailored is typical, but here are standard sizes in metric (male/female)",
+      "standard_sizes": {
+        "male": [
+          {
+            "size": "I",
+            "chest_cm": "85-92",
+            "waist_cm": "75-80",
+            "pelvis_cm": "85-90",
+            "biceps_cm": "24-27",
+            "thigh_cm": "48-52",
+            "inside_leg_cm": "66-68",
+            "shoulder_crotch_cm": "63-66",
+            "arm_cm": "50-52",
+            "height_cm": "164-169",
+            "weight_kg": "62-70"
+          },
+          {
+            "size": "II",
+            "chest_cm": "92-99",
+            "waist_cm": "80-86",
+            "pelvis_cm": "90-98",
+            "biceps_cm": "27-30",
+            "thigh_cm": "53-58",
+            "inside_leg_cm": "69-71",
+            "shoulder_crotch_cm": "66-69",
+            "arm_cm": "52-55",
+            "height_cm": "169-174",
+            "weight_kg": "68-76"
+          },
+          {
+            "size": "III",
+            "chest_cm": "99-105",
+            "waist_cm": "87-94",
+            "pelvis_cm": "97-104",
+            "biceps_cm": "29-34",
+            "thigh_cm": "57-61",
+            "inside_leg_cm": "72-74",
+            "shoulder_crotch_cm": "68-72",
+            "arm_cm": "56-58",
+            "height_cm": "174-179",
+            "weight_kg": "75-83"
+          },
+          {
+            "size": "IV",
+            "chest_cm": "104-112",
+            "waist_cm": "93-99",
+            "pelvis_cm": "102-110",
+            "biceps_cm": "34-36",
+            "thigh_cm": "60-64",
+            "inside_leg_cm": "74-76",
+            "shoulder_crotch_cm": "71-73",
+            "arm_cm": "58-60",
+            "height_cm": "176-181",
+            "weight_kg": "84-94"
+          },
+          {
+            "size": "V",
+            "chest_cm": "112-118",
+            "waist_cm": "99-106",
+            "pelvis_cm": "108-115",
+            "biceps_cm": "35-40",
+            "thigh_cm": "63-67",
+            "inside_leg_cm": "77-79",
+            "shoulder_crotch_cm": "73-75",
+            "arm_cm": "60-62",
+            "height_cm": "180-185",
+            "weight_kg": "95-105"
+          },
+          {
+            "size": "VI",
+            "chest_cm": "118-125",
+            "waist_cm": "106-112",
+            "pelvis_cm": "114-122",
+            "biceps_cm": "39-42",
+            "thigh_cm": "66-70",
+            "inside_leg_cm": "79-82",
+            "shoulder_crotch_cm": "74-77",
+            "arm_cm": "61-63",
+            "height_cm": "183-188",
+            "weight_kg": "105-115"
+          }
+        ],
+        "female": [
+          {
+            "size": "0",
+            "chest_cm": "65-74",
+            "waist_cm": "55-62",
+            "pelvis_cm": "82-89",
+            "biceps_cm": "22-25",
+            "thigh_cm": "48-52",
+            "inside_leg_cm": "63-66",
+            "shoulder_crotch_cm": "54-60",
+            "arm_cm": "45-47",
+            "height_cm": "150-158",
+            "weight_kg": "45-50"
+          },
+          {
+            "size": "I",
+            "chest_cm": "75-80",
+            "waist_cm": "60-65",
+            "pelvis_cm": "88-94",
+            "biceps_cm": "25-29",
+            "thigh_cm": "52-56",
+            "inside_leg_cm": "66-69",
+            "shoulder_crotch_cm": "61-64",
+            "arm_cm": "48-50",
+            "height_cm": "156-164",
+            "weight_kg": "50-55"
+          },
+          {
+            "size": "II",
+            "chest_cm": "81-90",
+            "waist_cm": "66-74",
+            "pelvis_cm": "92-98",
+            "biceps_cm": "28-30",
+            "thigh_cm": "56-60",
+            "inside_leg_cm": "69-72",
+            "shoulder_crotch_cm": "64-66",
+            "arm_cm": "52-54",
+            "height_cm": "164-169",
+            "weight_kg": "55-60"
+          },
+          {
+            "size": "III",
+            "chest_cm": "91-101",
+            "waist_cm": "75-85",
+            "pelvis_cm": "98-105",
+            "biceps_cm": "30-34",
+            "thigh_cm": "60-65",
+            "inside_leg_cm": "73-75",
+            "shoulder_crotch_cm": "67-69",
+            "arm_cm": "55-56",
+            "height_cm": "170-175",
+            "weight_kg": "61-68"
+          }
+        ]
+      },
+      "thickness_recommendations": [
+        { "thickness_mm": "1-2",  "recommended_temp_c": "26+" },
+        { "thickness_mm": "3",    "recommended_temp_c": "24-27" },
+        { "thickness_mm": "5",    "recommended_temp_c": "17-21" },
+        { "thickness_mm": "7",    "recommended_temp_c": "10-16" },
+        { "thickness_mm": "8+",   "recommended_temp_c": "<10" }
+      ]
+    },
+  
+    "HECS": {
+      "sizes": {
+        "Men": [
+          { "size": "S",   "height_cm": "168-173", "weight_kg": "61-70" },
+          { "size": "M",   "height_cm": "173-178", "weight_kg": "70-79" },
+          { "size": "L",   "height_cm": "178-183", "weight_kg": "79-88" },
+          { "size": "XL",  "height_cm": "183-188", "weight_kg": "88-97" },
+          { "size": "XXL", "height_cm": "188-193", "weight_kg": "97-106"}
+        ]
+      },
+      "thickness_recommendations": [
+        { "thickness_mm": "1-2",  "recommended_temp_c": "26+" },
+        { "thickness_mm": "3",    "recommended_temp_c": "24-27" },
+        { "thickness_mm": "5",    "recommended_temp_c": "17-21" },
+        { "thickness_mm": "7",    "recommended_temp_c": "10-16" },
+        { "thickness_mm": "8+",   "recommended_temp_c": "<10" }
+      ]
+    }
+  }
+  

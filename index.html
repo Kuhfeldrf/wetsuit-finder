@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Wetsuit Finder (Metric/Imperial Toggle)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      max-width: 700px;
+    }
+    form {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input[type="number"] {
+      width: 120px;
+    }
+    #results ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    #results li {
+      margin-bottom: 8px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Wetsuit Finder</h1>
+
+<form id="wetsuitForm">
+  <!-- Add this button at the top of the form -->
+  <button type="button" id="testDefaultButton">Test Default Values</button>
+
+  <!-- Toggle for Metric / Imperial -->
+  <label>
+    Units:
+    <select id="unitToggle">
+      <option value="metric" selected>Metric (cm/kg/°C)</option>
+      <option value="imperial">Imperial (in/lb/°F)</option>
+    </select>
+  </label>
+
+  <label>Height:
+    <input type="number" id="heightInput" min="35" max="100" required />
+    <span id="heightUnit">cm</span>
+  </label>
+
+  <label>Weight:
+    <input type="number" id="weightInput" min="30" max="400" required />
+    <span id="weightUnit">kg</span>
+  </label>
+
+  <label>Sex:
+    <select id="sexInput" required>
+      <option value="" disabled selected>--Select--</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="unisex">Unisex</option>
+    </select>
+  </label>
+
+  <label>Water Temp:
+    <input type="number" id="tempInput" min="0" max="100" required />
+    <span id="tempUnit">°C</span>
+  </label>
+
+  <button type="submit">Find Wetsuit</button>
+</form>
+
+<div id="results">Your matched wetsuit(s) will appear here.</div>
+
+<script>
+  let wetsuitsData = {};
+
+  // Fetch data from our JSON (in metric)
+  fetch('wetsuits.json')
+    .then(response => response.json())
+    .then(data => {
+      wetsuitsData = data;
+    })
+    .catch(err => console.error('Error loading wetsuit data:', err));
+
+  const form        = document.getElementById('wetsuitForm');
+  const unitToggle  = document.getElementById('unitToggle');
+  const heightInput = document.getElementById('heightInput');
+  const weightInput = document.getElementById('weightInput');
+  const tempInput   = document.getElementById('tempInput');
+  const sexInput    = document.getElementById('sexInput');
+
+  const heightUnitSpan = document.getElementById('heightUnit');
+  const weightUnitSpan = document.getElementById('weightUnit');
+  const tempUnitSpan   = document.getElementById('tempUnit');
+
+  // Helper: convert inches -> cm
+  function inchesToCm(inches) {
+    return inches * 2.54;
+  }
+  // Helper: convert pounds -> kg
+  function lbsToKg(lbs) {
+    return lbs * 0.45359237;
+  }
+  // Helper: convert Fahrenheit -> Celsius
+  function fToC(f) {
+    return (f - 32) * (5/9);
+  }
+
+  // Switch placeholders and units for input fields
+  unitToggle.addEventListener('change', () => {
+    const unit = unitToggle.value;
+
+    if (unit === 'imperial') {
+      // Switch to inches, pounds, Fahrenheit
+      heightUnitSpan.textContent = 'in';
+      weightUnitSpan.textContent = 'lb';
+      tempUnitSpan.textContent   = '°F';
+
+      heightInput.placeholder = 'e.g. 70';
+      weightInput.placeholder = 'e.g. 160';
+      tempInput.placeholder   = 'e.g. 75';
+    } else {
+      // Switch to cm, kg, Celsius
+      heightUnitSpan.textContent = 'cm';
+      weightUnitSpan.textContent = 'kg';
+      tempUnitSpan.textContent   = '°C';
+
+      heightInput.placeholder = 'e.g. 175';
+      weightInput.placeholder = 'e.g. 72';
+      tempInput.placeholder   = 'e.g. 24';
+    }
+  });
+
+  // Add this after your other const declarations
+  const testDefaultButton = document.getElementById('testDefaultButton');
+
+  // Add this event listener for the test button
+  testDefaultButton.addEventListener('click', () => {
+    // Set form to imperial units
+    unitToggle.value = 'imperial';
+    
+    // Set default values
+    heightInput.value = 72;
+    weightInput.value = 170;
+    sexInput.value = 'male';
+    tempInput.value = 55;
+    
+    // Update unit display
+    heightUnitSpan.textContent = 'in';
+    weightUnitSpan.textContent = 'lb';
+    tempUnitSpan.textContent = '°F';
+    
+    // Trigger the form submission
+    form.dispatchEvent(new Event('submit'));
+  });
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const sexValue = document.getElementById('sexInput').value;
+    let hVal = parseFloat(heightInput.value);
+    let wVal = parseFloat(weightInput.value);
+    let tVal = parseFloat(tempInput.value);
+
+    // Convert to metric internally if user selected imperial
+    if (unitToggle.value === 'imperial') {
+      // Convert inches -> cm, pounds -> kg, Fahrenheit -> Celsius
+      hVal = inchesToCm(hVal);
+      wVal = lbsToKg(wVal);
+      tVal = fToC(tVal);
+    }
+
+    // In a real application, you'd iterate over each brand's size charts
+    // and thickness recommendations to find the best match. For demonstration,
+    // we'll do a *very simplified* check: if height/weight is in a brand's 
+    // approximate range, we display it. This is just an example.
+
+    let matched = [];
+
+    // Example: We'll loop each brand, then check each men/women set if it exists
+    // and see if any size range might match. Then also check if the thickness range
+    // for that brand can match the water temp. (This is obviously naive.)
+    for (const brandName in wetsuitsData) {
+      const brandObj = wetsuitsData[brandName];
+
+      // 1) thickness check (any thickness rec that matches tVal?)
+      // We'll see if at least one recommended_temp_c range includes tVal.
+      // Ours are strings like "24-27" or "26+", we do a quick parse:
+      let thicknessMatch = brandObj.thickness_recommendations?.find(tr => {
+        const range = tr.recommended_temp_c;
+        if (range.includes('+')) {
+          // e.g. "26+" means 26 and up
+          const min = parseFloat(range);
+          return (tVal >= min);
+        } else if (range.includes('<')) {
+          // e.g. "<10" means below 10
+          const max = parseFloat(range.replace('<',''));
+          return (tVal < max);
+        } else if (range.includes('-')) {
+          // e.g. "24-27"
+          const parts = range.split('-').map(p => parseFloat(p));
+          return (tVal >= parts[0] && tVal <= parts[1]);
+        }
+        return false;
+      });
+
+      if (!thicknessMatch) {
+        // If no thickness rec is suitable for that brand, skip
+        continue;
+      }
+
+      // 2) sex check: if brand has Unisex or user's sex is available
+      //   (some brand entries have "Men" or "Women" or "Unisex" only)
+      //   We'll skip if the brand doesn't have a matching sex or unisex set.
+      let possibleSections = [];
+      if (sexValue === 'male' && brandObj.sizes?.Men) {
+        possibleSections.push({ sex: 'Men', sizes: brandObj.sizes.Men });
+      }
+      if (sexValue === 'female' && brandObj.sizes?.Women) {
+        possibleSections.push({ sex: 'Women', sizes: brandObj.sizes.Women });
+      }
+      if (sexValue === 'unisex' && brandObj.sizes?.Unisex) {
+        possibleSections.push({ sex: 'Unisex', sizes: brandObj.sizes.Unisex });
+      }
+
+      // For each possible section, see if there's a size with a matching range
+      possibleSections.forEach(sec => {
+        sec.sizes.forEach(sizeObj => {
+          // We'll parse e.g. "175-183" => numeric min/max
+          // Or if "120+" => numeric min is 120, max = Infinity
+          // This example is naive; you might want more robust logic or add more fields.
+
+          const heightRange = sizeObj.height_cm || "";
+          let minH = 0, maxH = 9999;
+          if (heightRange.includes('-')) {
+            const [low, high] = heightRange.split('-').map(x => parseFloat(x));
+            minH = low; maxH = high;
+          } else if (heightRange.includes('+')) {
+            minH = parseFloat(heightRange);
+            maxH = 9999;
+          }
+
+          const weightRange = sizeObj.weight_kg || "";
+          let minW = 0, maxW = 9999;
+          if (weightRange.includes('-')) {
+            const [low, high] = weightRange.split('-').map(x => parseFloat(x));
+            minW = low; maxW = high;
+          } else if (weightRange.includes('+')) {
+            minW = parseFloat(weightRange);
+            maxW = 9999;
+          }
+
+          if (hVal >= minH && hVal <= maxH && wVal >= minW && wVal <= maxW) {
+            matched.push({
+              brand: brandName,
+              sex: sec.sex,
+              size: sizeObj.size || 'N/A',
+              suggestedThickness: thicknessMatch.thickness_mm,
+              matchedHeightRange: heightRange,
+              matchedWeightRange: weightRange
+            });
+          }
+        });
+      });
+    }
+
+    const resultsDiv = document.getElementById('results');
+    if (matched.length === 0) {
+      resultsDiv.innerHTML = "<p>No suitable wetsuits found.</p>";
+      return;
+    }
+
+    let html = "<ul>";
+    matched.forEach(item => {
+      html += `
+        <li>
+          <strong>${item.brand} - Size ${item.size} (${item.sex})</strong><br/>
+          Matched height range: ${item.matchedHeightRange} cm<br/>
+          Matched weight range: ${item.matchedWeightRange} kg<br/>
+          Suggested thickness (mm): ${item.suggestedThickness}
+        </li>
+      `;
+    });
+    html += "</ul>";
+    resultsDiv.innerHTML = html;
+  });
+</script>
+</body>
+</html>
