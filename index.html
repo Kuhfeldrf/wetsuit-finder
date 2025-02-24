@@ -468,13 +468,22 @@
 
     let html = "<ul>";
     matched.forEach(item => {
+      // Convert ranges to imperial if needed
+      const heightRange = unitToggle.value === 'imperial' 
+        ? convertHeightRangeToImperial(item.matchedHeightRange)
+        : `${item.matchedHeightRange} cm`;
+      
+      const weightRange = unitToggle.value === 'imperial'
+        ? convertWeightRangeToImperial(item.matchedWeightRange)
+        : `${item.matchedWeightRange} kg`;
+      
       html += `
         <li>
           <strong>${item.brand} - Size ${item.size} (${item.sex})</strong><br/>
-          Matched height range: ${item.matchedHeightRange} cm<br/>
-          Matched weight range: ${item.matchedWeightRange} kg<br/>
+          Matched height range: ${heightRange}<br/>
+          Matched weight range: ${weightRange}<br/>
           <strong>Wetsuit Thickness: ${item.suggestedThickness} mm</strong><br/>
-          <em>Temperature Range: ${formatTempRange(item.tempRange)}</em>
+          <em>Temperature Range: ${formatTempRange(item.tempRange, unitToggle.value === 'imperial')}</em>
           ${item.thicknessNote ? `<br/><small>${item.thicknessNote}</small>` : ''}
         </li>
       `;
@@ -483,15 +492,53 @@
     resultsDiv.innerHTML = html;
   });
 
-  // Helper functions for formatting
-  function formatTempRange(rangeStr) {
+  // Add these helper functions for unit conversion
+  function convertHeightRangeToImperial(range) {
+    if (!range) return 'N/A';
+    if (range.includes('+')) {
+      const num = parseFloat(range);
+      return `${Math.round(num/2.54)}+ in`;
+    }
+    if (range.includes('-')) {
+      const [min, max] = range.split('-').map(num => Math.round(parseFloat(num)/2.54));
+      return `${min}-${max} in`;
+    }
+    return `${Math.round(parseFloat(range)/2.54)} in`;
+  }
+
+  function convertWeightRangeToImperial(range) {
+    if (!range) return 'N/A';
+    if (range.includes('+')) {
+      const num = parseFloat(range);
+      return `${Math.round(num*2.20462)}+ lb`;
+    }
+    if (range.includes('-')) {
+      const [min, max] = range.split('-').map(num => Math.round(parseFloat(num)*2.20462));
+      return `${min}-${max} lb`;
+    }
+    return `${Math.round(parseFloat(range)*2.20462)} lb`;
+  }
+
+  function formatTempRange(rangeStr, isImperial) {
+    if (!rangeStr) return 'N/A';
+    
+    const convertTemp = temp => isImperial 
+      ? `${Math.round(temp * 9/5 + 32)}°F` 
+      : `${temp}°C`;
+
     if (rangeStr.includes('<')) {
-      return `Below ${rangeStr.replace('<', '')}°C`;
+      const temp = parseFloat(rangeStr.replace('<', ''));
+      return `Below ${convertTemp(temp)}`;
     }
     if (rangeStr.includes('+')) {
-      return `${rangeStr.replace('+', '')}°C and above`;
+      const temp = parseFloat(rangeStr.replace('+', ''));
+      return `${convertTemp(temp)} and above`;
     }
-    return `${rangeStr}°C`;
+    if (rangeStr.includes('-')) {
+      const [min, max] = rangeStr.split('-').map(Number);
+      return `${convertTemp(min)} to ${convertTemp(max)}`;
+    }
+    return convertTemp(parseFloat(rangeStr));
   }
 
   function getThicknessNote(userTemp, recommendation) {
