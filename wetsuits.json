@@ -199,26 +199,6 @@
       ]
     },
   
-    "American Dive Co": {
-      "sizes": {
-        "Men": [
-          { "size": "S",   "height_cm": "165-173" },
-          { "size": "M",   "height_cm": "173-180" },
-          { "size": "L",   "height_cm": "178-185" },
-          { "size": "XL",  "height_cm": "183-191" },
-          { "size": "XXL", "height_cm": "188-196" }
-        ],
-        "note": "Standard S-XXL sizing; contact manufacturer for detailed chart"
-      },
-      "thickness_recommendations": [
-        { "thickness_mm": "1-2",  "recommended_temp_c": "26+" },
-        { "thickness_mm": "3",    "recommended_temp_c": "24-27" },
-        { "thickness_mm": "5",    "recommended_temp_c": "17-21" },
-        { "thickness_mm": "7",    "recommended_temp_c": "10-16" },
-        { "thickness_mm": "8+",   "recommended_temp_c": "<10" }
-      ]
-    },
-  
     "Polosub": {
       "note": "Custom tailored wetsuits (no fixed size chart; suits are made-to-measure)",
       "thickness_recommendations": [
@@ -375,25 +355,6 @@
         { "thickness_mm": "7",    "recommended_temp_c": "10-16" },
         { "thickness_mm": "8+",   "recommended_temp_c": "<10" }
       ]
-    },
-  
-    "HECS": {
-      "sizes": {
-        "Men": [
-          { "size": "S",   "height_cm": "168-173", "weight_kg": "61-70" },
-          { "size": "M",   "height_cm": "173-178", "weight_kg": "70-79" },
-          { "size": "L",   "height_cm": "178-183", "weight_kg": "79-88" },
-          { "size": "XL",  "height_cm": "183-188", "weight_kg": "88-97" },
-          { "size": "XXL", "height_cm": "188-193", "weight_kg": "97-106"}
-        ]
-      },
-      "thickness_recommendations": [
-        { "thickness_mm": "1-2",  "recommended_temp_c": "26+" },
-        { "thickness_mm": "3",    "recommended_temp_c": "24-27" },
-        { "thickness_mm": "5",    "recommended_temp_c": "17-21" },
-        { "thickness_mm": "7",    "recommended_temp_c": "10-16" },
-        { "thickness_mm": "8+",   "recommended_temp_c": "<10" }
-      ]
     }
-  }
+}
   
